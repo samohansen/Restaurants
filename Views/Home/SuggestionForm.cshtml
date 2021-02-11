@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Suggest a Restaurant";
+}
+@model Restaurants.Models.SuggestionResponse
+
+<div class="text-center">
+    <p>Thank you for your interest in suggesting a restaurant to be considered for our rankings. Please fill out the form below.</p>
+
+
+    <form asp-action="SuggestionForm" method="post">
+        <div>
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" />
+        </div>
+
+        <div>
+            <label asp-for="RestaurantName">Restaurant Name:</label>
+            <input asp-for="RestaurantName" />
+        </div>
+
+        <div>
+            <label asp-for="FavoriteDish">Favorite Dish:</label>
+            <input asp-for="FavoriteDish" />
+        </div>
+
+        <div>
+            <label asp-for="RestaurantPhone">Restaurant Phone:</label>
+            <input asp-for="RestaurantPhone" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit your Application</button>
+    </form>
+    <div asp-validation-summary="All"></div>
+</div>

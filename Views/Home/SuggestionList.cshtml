@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "List of Suggestions";
+}
+
+@model IEnumerable<Restaurants.Models.SuggestionResponse>
+
+
+
+<div>
+    <h2>Restaurant suggestions waiting to be reviewed:</h2>
+    <p>Thank you for submitting a suggestion! We will review it as soon as we can.</p>
+
+    <table  class = "table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Restaurant Name</th>
+                <th>Favorite Dish</th>
+                <th>Restaurant's Phone #</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Restaurants.Models.SuggestionResponse x in Model)
+            {
+                <tr>
+                    <td>@x.Name</td>
+                    <td>@x.RestaurantName</td>
+                    <td>@x.FavoriteDish</td>
+                    <td>@x.RestaurantPhone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
